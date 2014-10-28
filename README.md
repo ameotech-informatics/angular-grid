@@ -2,20 +2,22 @@ angular-grid
 ============
 
 ###Requirements:-###
+---------------------
 - [node]
 - [npm]
 - [bower]
 
 
 ###Steps: To set the project###
-1)install node.js
-2)install git.
-3)npm install -g yo
-4)npm install -g bower
-5)npm install -g grunt
-6)npm install -g grunt cli
-7)npm install
-8)bower install
+--------------------------------
+- [installnode.js]
+- [install git]
+- [npm install -g yo]
+- [npm install -g bower]
+- [npm install -g grunt]
+- [npm install -g grunt cli]
+- [npm install]
+- [bower install]
     or
   if you want install individual bower components then
   bower install --save-dev packagename
