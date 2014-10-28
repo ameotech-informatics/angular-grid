@@ -1,0 +1,144 @@
+﻿angular.module('angulargrid', [])
+.directive('angtable', ['$filter', function ($filter) {
+    return {
+        scope: {
+            data: "=",
+            ec: '=',
+            headers: '=',
+            filter: '='
+        },
+        restrict: 'EA',
+        template: '<div class="table-responsive">' +
+                            '<table class="table table-bordered table-hover table-striped">' +
+                                '<thead>' +
+                                    '<tr>' +
+                                        '<th ng-repeat="header in Headers">' +
+                                            '{{header}}' +
+                                            '<i>' +
+                                                '<a class="glyphicon glyphicon-sort-by-alphabet" href="javascript://" ng-click="order(header,$event)"></a>' +
+                                            '</i>' +
+                                            '<input ng-show="EnableFilter" ng-keyup="filterOrders($event, $index)" type="text" class="form-control" />' +
+                                        '</th>' +
+                                    '</tr>' +
+                                '</thead>' +
+                                '<tbody>' +
+                                    '<tr ng-repeat="objData in Times">' +
+                                        '<td ng-repeat="obje in objData.obj track by $index">{{obje}}</td>' +
+                                    '</tr>' +
+                                '</tbody>' +
+                            '</table>' +
+
+                            '<pagination boundary-links="true" total-items="AllTimeStamps.length" ng-model="currentPage" class="pagination-sm"  previous-text="Prev" next-text="Next" first-text="First" last-text="Last"></pagination>' +
+                        '</div>',
+        link: function ($scope, $attrs) {
+
+            var orderBy = $filter('orderBy');
+
+            $scope.reverse = false;
+
+            $scope.order = function (predicate, $event) {
+                $scope.reverse = !$scope.reverse;
+                alert(predicate);
+                $scope.AllTimeStamps = orderBy($scope.AllTimeStamps, 1, $scope.reverse);
+                console.log(predicate);
+                console.log($scope.AllTimeStamps);
+                $scope.FilterPaging();
+
+                var element = angular.element($event.target);
+                if (element.hasClass("glyphicon-sort-by-alphabet")) {
+                    element.removeClass("glyphicon-sort-by-alphabet");
+                    element.addClass("glyphicon-sort-by-alphabet-alt");
+                }
+                else {
+                    element.removeClass("glyphicon-sort-by-alphabet-alt");
+                    element.addClass("glyphicon-sort-by-alphabet");
+                }
+            };
+
+            $scope.Headers = [];
+
+            $scope.Times = [];
+
+            $scope.AllTimeStamps = [];
+
+            $scope.currentPage = 1;
+
+            $scope.numPerPage = 10;
+
+            if ($scope.ec == undefined) {
+                $scope.ec = [];
+            }
+
+            $scope.autoHeader = true;
+
+            if ($scope.headers !== undefined) {
+                $scope.autoHeader = false;
+            }
+
+            $scope.FilterPaging = function () {
+                var begin = (($scope.currentPage - 1) * $scope.numPerPage)
+               , end = begin + $scope.numPerPage;
+
+                $scope.Times = $scope.AllTimeStamps.slice(begin, end);
+            }
+
+            $scope.$watch("currentPage", function (event, data) {
+                $scope.FilterPaging();
+            });
+
+            $scope.EnableFilter = true;
+            if ($scope.filter !== undefined && $scope.filter === false) {
+                $scope.EnableFilter = false;
+            }
+
+            $scope.filterOrders = function ($event, index) {
+                var input = angular.element($event.target);
+                console.log(input);
+                var search = input.val();
+                console.log(search);
+                if (search != "") {
+                    var result = [];
+                    var result = $filter('filter')($scope.AllTimeStamps, search);
+                    $scope.Times = result;
+                }
+                else {
+                    $scope.Times = $scope.AllTimeStamps;
+                    $scope.FilterPaging();
+                }
+            }
+
+            $scope.Headers = [];
+
+            $scope.AllTimeStamps = [];
+            if ($scope.autoHeader) {
+                Object.getOwnPropertyNames($scope.data[0]).forEach(function (val, idx, array) {
+                    if ($scope.ec.indexOf(val) < 0) {
+                        $scope.Headers.push(val);
+                    }
+                });
+            }
+            else {
+                $scope.Headers = $scope.headers;
+            }
+
+            $scope.DataToRender = [];
+
+            angular.forEach($scope.data, function (item) {
+                var values = [];
+                Object.getOwnPropertyNames(item).forEach(function (val, idx, array) {
+
+                    if ($scope.ec.indexOf(val) < 0) {
+                        values.push(item[val]);
+                    }
+
+
+                });
+                if (values.length > 0)
+                    $scope.AllTimeStamps.push({ obj: values });
+            });
+
+            $scope.Times = $scope.AllTimeStamps;
+            $scope.FilterPaging();
+        }
+    }
+}]);
