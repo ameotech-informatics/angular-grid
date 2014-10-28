@@ -2,7 +2,7 @@
 .directive('angtable', ['$filter', '$rootScope', function ($filter, $rootScope) {
     return {
         scope: {
-            data: "@",
+            data: "=",
             ec: '@',
             // headers: '=',
             filter: '=',
@@ -156,8 +156,8 @@
                     ecolumns = [];
                 }
 
-                if ($scope.$eval($attr.data).length > 0) {
-                    Object.getOwnPropertyNames($scope.$eval($attr.data)[0]).forEach(function (val, idx, array) {
+                if ($scope.data.length > 0) {
+                    Object.getOwnPropertyNames($scope.data[0]).forEach(function (val, idx, array) {
                         if (ecolumns.length > 0) {
                             if (ecolumns.indexOf(val) >= 0) {
                                 $scope.Headers.push(val);
@@ -170,7 +170,7 @@
 
                     $scope.DataToRender = [];
 
-                    angular.forEach($scope.$eval($attr.data), function (item) {
+                    angular.forEach($scope.data, function (item) {
                         var values = [];
 
                         Object.getOwnPropertyNames(item).forEach(function (val, idx, array) {
