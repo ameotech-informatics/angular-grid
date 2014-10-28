@@ -39,8 +39,9 @@ angular-grid
                  enablecrud="true" noofrecordperpage="7"></angtable>
 
 ###Directive description:-###
--**filter**             :- to enable  filter textbox ,set filter=true and vice-versa.
--**enablepaging**       :- to enable paging, set enablepaging=true and vice=versa.
+--------------------------------
+-[**filter**             :- to enable  filter textbox ,set filter=true and vice-versa.]
+-[**enablepaging**       :- to enable paging, set enablepaging=true and vice=versa.]
 -**enablecrud**         :- to enable enable crud(edit/update/delete) set enablecrud=true and vice-versa.
 -**noofrecordperpage**  :- to display number of record per page, set noofrecordperpage=7.
 -**jsondata**           :- to set data="tableData"( here tableData is json data)
