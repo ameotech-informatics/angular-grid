@@ -19,21 +19,21 @@ angular-grid
 > - **npm install**
 > - **bower install**
     or
-  if you want install individual bower components then
+> -  if you want install individual bower components then
   bower install --save-dev packagename
   
-  e.g bower install angular-bootstrap  --save-dev
-  in this project ,we some bower-components that are given below:-
-  a)angular
-  b)angular-bootstrap
-  c)angular-route
-  d)bootstrap
-  e)jquery
-  f)jquery-ui
+  > - e.g bower install angular-bootstrap  --save-dev
+  > -in this project ,we some bower-components that are given below:-
+  > -angular
+  > - angular-bootstrap
+  > -angular-route
+  > -bootstrap
+  > -jquery
+  > -jquery-ui
   
-9)grunt serve
+> -grunt serve
   or
-10)grunt serve --force  
+>- grunt serve --force  
 
 
 ###Directive:- ###     
