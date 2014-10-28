@@ -55,7 +55,7 @@ enablecrud  | to enable enable crud(edit/update/delete) set enablecrud=true and 
 noofrecordperpage | to display number of record per page, set noofrecordperpage=7.
 ------------------|---------------------------------------------------------------
 
-jsondata |to set data="tableData"( here tableData is json data)
+data |to set data="tableData"( here tableData is json data)
 -------- |----------------------------------------------------
              
 
