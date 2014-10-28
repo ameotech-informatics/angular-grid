@@ -11,31 +11,9 @@ angular-grid
 ###Steps: To setup the project###
 --------------------------------
 > - **install node.js**
-> - **install git**
-> - **npm install -g yo**
 > - **npm install -g bower**
-> - **npm install -g grunt**
-> - **npm install -g grunt cli**
-> - **npm install**
 > - **bower install**
-    > - or
-> -  if you want install individual bower components then
-  bower install --save-dev packagename
-  
-  > - e.g bower install angular-bootstrap  --save-dev
-  > -in this project ,we some bower-components that are given below:-
-  > -angular
-  > - angular-bootstrap
-  > -angular-route
-  > -bootstrap
-  > -jquery
-  > -jquery-ui
-  
-> -grunt serve
-  > - or
->- grunt serve --force  
-
-
+   
 ###Directive:- ###   
 ---------------------
 <angtable filter="true" ec="{{headerColumns}}"   data="tableData"  enablepaging="true" 
