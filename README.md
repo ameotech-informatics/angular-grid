@@ -34,15 +34,16 @@ angular-grid
 10)grunt serve --force  
 
 
-###Directive:- ###     <angtable filter="true" ec="{{headerColumns}}"   data="tableData"  enablepaging="true" 
+###Directive:- ###     
+<angtable filter="true" ec="{{headerColumns}}"   data="tableData"  enablepaging="true" 
                  enablecrud="true" noofrecordperpage="7"></angtable>
 
 ###Directive description:-###
-1)filter             :- to enable  filter textbox ,set filter=true and vice-versa.
-2)enablepaging       :- to enable paging, set enablepaging=true and vice=versa.
-3)enablecrud         :- to enable enable crud(edit/update/delete) set enablecrud=true and vice-versa.
-4)noofrecordperpage  :- to display number of record per page, set noofrecordperpage=7.
-5)jsondata           :- to set data="tableData"( here tableData is json data)
+-**filter**             :- to enable  filter textbox ,set filter=true and vice-versa.
+-**enablepaging**       :- to enable paging, set enablepaging=true and vice=versa.
+-**enablecrud**         :- to enable enable crud(edit/update/delete) set enablecrud=true and vice-versa.
+-**noofrecordperpage**  :- to display number of record per page, set noofrecordperpage=7.
+-**jsondata**           :- to set data="tableData"( here tableData is json data)
              
 
 
