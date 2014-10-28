@@ -2,9 +2,9 @@ angular-grid
 ============
 
 ###Requirements:-###
-1)node
-2)npm
-3)bower
+[node]
+[npm]
+[bower]
 
 
 ###Steps: To set the project###
