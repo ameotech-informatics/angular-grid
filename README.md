@@ -7,7 +7,7 @@ angular-grid
 3)bower
 
 
-Steps: To set the project
+###Steps: To set the project###
 1)install node.js
 2)install git.
 3)npm install -g yo
@@ -34,10 +34,10 @@ Steps: To set the project
 10)grunt serve --force  
 
 
-Directive:-      <angtable filter="true" ec="{{headerColumns}}"   data="tableData"  enablepaging="true" 
+###Directive:- ###     <angtable filter="true" ec="{{headerColumns}}"   data="tableData"  enablepaging="true" 
                  enablecrud="true" noofrecordperpage="7"></angtable>
 
-Directive description:-
+###Directive description:-###
 1)filter             :- to enable  filter textbox ,set filter=true and vice-versa.
 2)enablepaging       :- to enable paging, set enablepaging=true and vice=versa.
 3)enablecrud         :- to enable enable crud(edit/update/delete) set enablecrud=true and vice-versa.
