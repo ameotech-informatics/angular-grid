@@ -34,6 +34,12 @@ noofrecordperpage | to display number of record per page, set noofrecordperpage=
 
 data |to set data="tableData"( here tableData is json data)
 -------- |----------------------------------------------------
-             
+
+headercolumns|to display all headers from jsonData set ec={{headerColumns}}(here headerColumns is jsonData)
+-------------|---------------------------------------------------------------------------------------------
+
+header| to display selected header from jsonData set ec={{header}}(here header is jsonData)
+------|------------------------------------------------------------------------------------
+
 
 
