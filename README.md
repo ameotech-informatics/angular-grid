@@ -14,11 +14,9 @@ angular-grid
 > - **npm install -g bower**
 > - **bower install**
    
-###Directive:- ###   
----------------------
----------------------------------------------------------------------------------------
-<angtable filter="true" ec="{{headerColumns}}"   data="tableData"  enablepaging="true" 
----------------------------------------------------------------------------------------
+
+
+```<angtable filter="true" ec="{{headerColumns}}"   data="tableData"  enablepaging="true" enablecrud="true"noofrecordperpage="7"></angtable>```
 
 ###Directive description:-###
 --------------------------------
