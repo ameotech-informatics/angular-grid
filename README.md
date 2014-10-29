@@ -16,10 +16,10 @@ angular-grid
    
 ###Directive:- ###   
 ---------------------
-,,,
+---------------------------------------------------------------------------------------
 <angtable filter="true" ec="{{headerColumns}}"   data="tableData"  enablepaging="true" 
                  enablecrud="true" noofrecordperpage="7"></angtable>
-,,,
+--------------------------------------------------------------------------------------
 
 ###Directive description:-###
 --------------------------------
